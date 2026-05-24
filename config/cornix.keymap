@@ -24,8 +24,8 @@
 #define HM_PRIOR_IDLE        70   // 直前キー入力後 70ms 以内なら常にタップ
 
 // レイヤー番号
-#define MAC 0
-#define WIN 1
+#define WIN 0
+#define MAC 1
 #define NAV 2
 #define FN  3
 #define SYM 4
@@ -179,7 +179,7 @@
         // ホームロウ: A=Ctrl S=Alt D=Gui F=Shift | J=Shift K=Gui L=Alt ;=Ctrl
         // ─────────────────────────────────────────────────────────────────────
         mac_layer {
-            display-name = "Mac";
+            display-name = "Win";
             bindings = <
 //  ╭─────────┬──────────────────┬──────────────┬──────────────┬───────────────────┬──────────╮                              ╭──────────┬───────────────────┬─────────────────┬──────────────┬───────────────────┬──────────╮
     &kp TAB    &kp Q              &kp W          &kp E          &kp R               &kp T                                     &kp Y      &kp U               &kp I             &kp O          &kp P               &kp MINUS
@@ -198,7 +198,7 @@
         // Layer 1: WIN（Windows 用）
         // ─────────────────────────────────────────────────────────────────────
         win_layer {
-            display-name = "Win";
+            display-name = "Mac";
             bindings = <
     &kp TAB    &kp Q              &kp W          &kp E          &kp R               &kp T                                     &kp Y      &kp U               &kp I             &kp O          &kp P               &kp MINUS
     &kp LCTRL  &hm_l LCTRL A      &hm_l LALT S   &hm_l LGUI D   &hm_shift_l LSHFT F &kp G                                    &kp H      &hm_shift_r RSHFT J &hm_r RGUI K      &hm_r RALT L   &hm_r RCTRL SEMI    &kp SQT
