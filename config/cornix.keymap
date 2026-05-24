@@ -116,14 +116,14 @@
 
         // M+A+C → Win レイヤーに切替
         combo_to_win {
-            bindings = <&df WIN>;
+            bindings = <&to WIN>;
             key-positions = <13 27 33>;  // A C M
             layers = <MAC>;
         };
 
         // W+I+N → Mac レイヤーに切替
         combo_to_mac {
-            bindings = <&df MAC>;
+            bindings = <&to MAC>;
             key-positions = <2 8 32>;    // W I N
             layers = <WIN>;
         };
