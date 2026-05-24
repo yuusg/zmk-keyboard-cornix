@@ -2,10 +2,10 @@
  * Cornix LP ZMK Keymap
  * Vial レイアウトをベースにホームロウモッドを追加
  *
- * Layer 0: MAC  - Mac ベース
- * Layer 1: WIN  - Windows ベース
- * Layer 2: NAV  - ナビゲーション（Mac: LH1ホールド）
- * Layer 3: FN   - ファンクション（Win: LH1ホールド）
+ * Layer 0: WIN  - Windows ベース
+ * Layer 1: MAC  - Mac ベース
+ * Layer 2: NAV  - ナビゲーション（Win: LH1ホールド）
+ * Layer 3: FN   - ファンクション（Mac: LH1ホールド）
  * Layer 4: SYM  - 記号・数字（LH0ホールド）
  * Layer 5: SYS  - システム・BT（RP2）
  */
@@ -114,18 +114,18 @@
     combos {
         compatible = "zmk,combos";
 
-        // M+A+C → Win レイヤーに切替
-        combo_to_win {
-            bindings = <&to WIN>;
-            key-positions = <13 27 33>;  // A C M
-            layers = <MAC>;
-        };
-
-        // W+I+N → Mac レイヤーに切替
+        // Win レイヤーで M+A+C → Mac レイヤーへ切替
         combo_to_mac {
             bindings = <&to MAC>;
-            key-positions = <2 8 32>;    // W I N
+            key-positions = <13 27 33>;  // A C M（mac と打つ → mac レイヤーへ）
             layers = <WIN>;
+        };
+
+        // Mac レイヤーで W+I+N → Win レイヤーへ切替
+        combo_to_win {
+            bindings = <&to WIN>;
+            key-positions = <2 8 32>;    // W I N（win と打つ → win レイヤーへ）
+            layers = <MAC>;
         };
 
         // D+F → (
@@ -175,7 +175,7 @@
         compatible = "zmk,keymap";
 
         // ─────────────────────────────────────────────────────────────────────
-        // Layer 0: MAC
+        // Layer 0: WIN
         // ホームロウ: A=Ctrl S=Alt D=Gui F=Shift | J=Shift K=Gui L=Alt ;=Ctrl
         // ─────────────────────────────────────────────────────────────────────
         mac_layer {
@@ -195,7 +195,7 @@
         };
 
         // ─────────────────────────────────────────────────────────────────────
-        // Layer 1: WIN（Windows 用）
+        // Layer 1: MAC（Mac 用）
         // ─────────────────────────────────────────────────────────────────────
         win_layer {
             display-name = "Mac";
@@ -209,7 +209,7 @@
         };
 
         // ─────────────────────────────────────────────────────────────────────
-        // Layer 2: NAV（ナビゲーション・Mac 用）
+        // Layer 2: NAV（ナビゲーション・Win 用）
         // LH1 ホールドで起動
         // ─────────────────────────────────────────────────────────────────────
         nav_layer {
@@ -224,8 +224,8 @@
         };
 
         // ─────────────────────────────────────────────────────────────────────
-        // Layer 3: FN（ファンクション・Win 用）
-        // LH1 ホールドで起動（Win モード時）
+        // Layer 3: FN（ファンクション・Mac 用）
+        // LH1 ホールドで起動（Mac モード時）
         // ─────────────────────────────────────────────────────────────────────
         fn_layer {
             display-name = "Fn";
