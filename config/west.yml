@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: hitsmaxft
       url-base: https://github.com/hitsmaxft
+    - name: yuusg
+      url-base: https://github.com/yuusg
     - name: englmaxi
       url-base: https://github.com/englmaxi
     - name: urob
@@ -21,10 +23,11 @@ manifest:
       remote: urob
       revision: main
       clone-depth: 1
-    #- name: zmk-rgbled-widget
-    #  remote: hitsmaxft
-    #  revision: main
-    #  clone-depth: 1
+    # hitsmaxft フォークの Kconfig 型なし定義バグ(Zephyr 4.1 非互換)を
+    # 修正した自前フォークを使用。SHA 固定なので clone-depth は付けない。
+    - name: zmk-rgbled-widget
+      remote: yuusg
+      revision: 24336e4b7ab5616cd76c934ab71642886fd90b4a
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
