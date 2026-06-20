@@ -27,7 +27,7 @@ manifest:
     # 修正した自前フォークを使用。SHA 固定なので clone-depth は付けない。
     - name: zmk-rgbled-widget
       remote: yuusg
-      revision: 24336e4b7ab5616cd76c934ab71642886fd90b4a
+      revision: 53088d3939a5791ef0174fdfc87943e6c3c04036
     - name: zmk-dongle-display
       remote: englmaxi
       revision: main
