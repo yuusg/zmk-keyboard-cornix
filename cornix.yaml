@@ -44,7 +44,7 @@ layers:
   - LALT
   - {t: LANG2, h: LSHFT}
   - {t: SPACE, h: Nav}
-  - {t: SPACE, h: Sym}
+  - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LGUI}
   - {t: LANG1, h: LSHFT}
@@ -95,7 +95,7 @@ layers:
   - LSHFT
   - {t: LANG2, h: LGUI}
   - {t: SPACE, h: Fn}
-  - {t: SPACE, h: Sym}
+  - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LALT}
   - {t: LANG1, h: LSHFT}
