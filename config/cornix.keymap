@@ -9,6 +9,8 @@
  * Layer 4: SYM  - 記号・数字（LH0ホールド）
  * Layer 5: SYS  - システム・BT（RP2）
  * Layer 6: MOUSE- マウス操作（RH2 のダブルタップで起動／&to WIN・&to MAC で復帰）
+ * Layer 7: SCW  - ショートカット Win（Ctrl 系。LH2 のダブルタップ＋ホールドで一時起動）
+ * Layer 8: SCM  - ショートカット Mac（Cmd 系。LH2 のダブルタップ＋ホールドで一時起動）
  */
 
 #include "zmk-helpers/helper.h"
@@ -33,6 +35,8 @@
 #define SYM 4
 #define SYS 5
 #define MOUSE 6
+#define SCW 7
+#define SCM 8
 
 // ホームロウモッドの hold-trigger-key-positions 用定義
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
@@ -121,6 +125,22 @@
             tapping-term-ms = <200>;
             bindings = <&hm LSHFT LANG1>, <&to MOUSE>;
         };
+
+        // LH2(Win): タップ=LANG2(英数) / ホールド=LSHFT / ダブルタップ＋ホールド=SCW へ一時切替
+        td_eisu_scw: tapdance_eisu_scw {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&hm LSHFT LANG2>, <&mo SCW>;
+        };
+
+        // LH2(Mac): タップ=LANG2(英数) / ホールド=LGUI / ダブルタップ＋ホールド=SCM へ一時切替
+        td_eisu_scm: tapdance_eisu_scm {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&hm LGUI LANG2>, <&mo SCM>;
+        };
     };
 
     combos {
@@ -200,7 +220,7 @@
 //  ├─────────┼──────────────────┼──────────────┼──────────────┼───────────────────┼──────────┼──────────╮  ╭──────────┼──────────┼───────────────────┼─────────────────┼──────────────┼───────────────────┼──────────┤
     &kp LSHFT  &kp Z              &kp X          &kp C          &kp V               &kp B      &kp C_MUTE   &mkp MB3   &kp N      &kp M               &kp COMMA         &kp DOT        &kp FSLH            &kp FSLH
 //  ├─────────┼──────────────────┼──────────────┼──────────────┼───────────────────┼──────────╯              ╰──────────┼───────────────────┼─────────────────┼──────────────┼───────────────────┼──────────┤
-    &kp LCTRL  &kp LGUI           &kp LALT       &hm LSHFT LANG2 &lt NAV SPACE      &lt SYM MINUS                            &kp ENTER  &hm LGUI TAB        &td_lang1_mouse   &kp LALT       &kp DOWN            &mo SYS
+    &kp LCTRL  &kp LGUI           &kp LALT       &td_eisu_scw    &lt NAV SPACE      &lt SYM MINUS                            &kp ENTER  &hm LGUI TAB        &td_lang1_mouse   &kp LALT       &kp DOWN            &mo SYS
 //  ╰─────────┴──────────────────┴──────────────┴──────────────┴───────────────────┴──────────────────────────────────────────────────────┴─────────────────┴──────────────┴───────────────────┴──────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -215,7 +235,7 @@
     &kp TAB    &kp Q              &kp W          &kp E          &kp R               &kp T                                     &kp Y      &kp U               &kp I             &kp O          &kp P               &kp MINUS
     &kp LCTRL  &hm_l LCTRL A      &hm_l LALT S   &hm_l LGUI D   &hm_shift_l LSHFT F &kp G                                    &kp H      &hm_shift_r RSHFT J &hm_r RGUI K      &hm_r RALT L   &hm_r RCTRL SEMI    &kp SQT
     &kp LSHFT  &kp Z              &kp X          &kp C          &kp V               &kp B      &kp C_MUTE   &mkp MB3   &kp N      &kp M               &kp COMMA         &kp DOT        &kp FSLH            &none
-    &none      &kp LALT           &kp LSHFT      &hm LGUI LANG2  &lt FN SPACE       &lt SYM MINUS                            &kp ENTER  &hm LALT TAB        &td_lang1_mouse   &kp LALT       &none               &mo SYS
+    &none      &kp LALT           &kp LSHFT      &td_eisu_scm    &lt FN SPACE       &lt SYM MINUS                            &kp ENTER  &hm LALT TAB        &td_lang1_mouse   &kp LALT       &none               &mo SYS
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
@@ -300,6 +320,37 @@
 //  ├─────────┼──────────────────┼──────────────┼──────────────┼───────────────────┼──────────╯              ╰──────────┼───────────────────┼─────────────────┼──────────────┼───────────────────┼──────────┤
     &none      &none              &none          &to MAC        &to WIN             &none                                     &kp ESC    &mkp LCLK           &mkp RCLK         &none          &none               &none
 //  ╰─────────┴──────────────────┴──────────────┴──────────────┴───────────────────┴──────────────────────────────────────────────────────┴─────────────────┴──────────────┴───────────────────┴──────────╯
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+        // ─────────────────────────────────────────────────────────────────────
+        // Layer 7: SCW（ショートカット・Windows）
+        // 起動: LH2 のダブルタップ＋ホールド（&mo SCW、押している間だけ有効）
+        // 現状は S = スクリーンショット（Win+Shift+S）のみ。他は &trans（順次追加予定）
+        // ─────────────────────────────────────────────────────────────────────
+        scw_layer {
+            display-name = "ScWin";
+            bindings = <
+    &trans     &trans             &trans         &trans         &trans              &trans                                    &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans             &kp LG(LS(S))  &trans         &trans              &trans                                    &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans             &trans         &trans         &trans              &trans     &trans       &trans     &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans             &trans         &trans         &trans              &trans                                    &trans     &trans              &trans            &trans         &trans              &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        // ─────────────────────────────────────────────────────────────────────
+        // Layer 8: SCM（ショートカット・Mac）
+        // 起動: LH2 のダブルタップ＋ホールド（&mo SCM、押している間だけ有効）
+        // 現状は S = スクリーンショット（Ctrl+Shift+Cmd+4）のみ。他は &trans（順次追加予定）
+        // ─────────────────────────────────────────────────────────────────────
+        scm_layer {
+            display-name = "ScMac";
+            bindings = <
+    &trans     &trans               &trans         &trans         &trans              &trans                                    &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans               &kp LC(LS(LG(N4)))  &trans    &trans              &trans                                   &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans               &trans         &trans         &trans              &trans     &trans       &trans     &trans     &trans              &trans            &trans         &trans              &trans
+    &trans     &trans               &trans         &trans         &trans              &trans                                    &trans     &trans              &trans            &trans         &trans              &trans
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
         };
