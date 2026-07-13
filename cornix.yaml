@@ -32,7 +32,7 @@ layers:
   - V
   - B
   - MUTE
-  - '&mkp MB3'
+  - 'M-Click'
   - N
   - M
   - ','
@@ -42,12 +42,12 @@ layers:
   - LCTRL
   - LGUI
   - LALT
-  - {t: LANG2, h: LSHFT}
+  - {t: LANG2, h: Sft, s: x2 ScWin}
   - {t: SPACE, h: Nav}
   - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LGUI}
-  - {t: LANG1, h: LSHFT}
+  - {t: LANG1, h: Sft, s: x2 Mouse}
   - LALT
   - DOWN
   - Sys
@@ -83,7 +83,7 @@ layers:
   - V
   - B
   - MUTE
-  - '&mkp MB3'
+  - 'M-Click'
   - N
   - M
   - ','
@@ -93,12 +93,12 @@ layers:
   - ''
   - LALT
   - LSHFT
-  - {t: LANG2, h: LGUI}
+  - {t: LANG2, h: Gui, s: x2 ScMac}
   - {t: SPACE, h: Fn}
   - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LALT}
-  - {t: LANG1, h: LSHFT}
+  - {t: LANG1, h: Sft, s: x2 Mouse}
   - LALT
   - ''
   - Sys
@@ -134,7 +134,7 @@ layers:
   - ''
   - ''
   - {t: ▽, type: trans}
-  - '&mkp MB3'
+  - 'M-Click'
   - HOME
   - PG DN
   - PG UP
@@ -185,7 +185,7 @@ layers:
   - ''
   - ''
   - {t: ▽, type: trans}
-  - '&mkp MB3'
+  - 'M-Click'
   - HOME
   - PG DN
   - PG UP
@@ -236,7 +236,7 @@ layers:
   - F4
   - Sft+F5
   - {t: ▽, type: trans}
-  - '&mkp MB3'
+  - 'M-Click'
   - F6
   - F7
   - F8
@@ -306,6 +306,159 @@ layers:
   - ''
   - ''
   - {t: '&bootloader', type: held}
+  Mouse:
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - 'Mv ↑'
+  - ''
+  - ''
+  - ''
+  - 'L-Click'
+  - ''
+  - 'R-Click'
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - 'Mv ←'
+  - 'Mv ↓'
+  - 'Mv →'
+  - ''
+  - 'Mv ←'
+  - 'Mv ↓'
+  - 'Mv ↑'
+  - 'Mv →'
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - 'M-Click'
+  - 'Scr ←'
+  - 'Scr ↓'
+  - 'Scr ↑'
+  - 'Scr →'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: Win, h: toggle}
+  - {t: Mac, h: toggle}
+  - ''
+  - ESC
+  - 'L-Click'
+  - 'R-Click'
+  - ''
+  - ''
+  - ''
+  ScWin:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Gui+Sft+S
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  ScMac:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+Sft+Gui+4
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
 combos:
 - p: [13, 27, 33]
   k: {t: Mac, h: toggle}

@@ -46,11 +46,12 @@
 / {
     behaviors {
         // 左手ホームロウモッド（右手キーを押したときだけホールドが発動）
+        // tap-preferred: tapping-term 経過時のみホールド判定（左右で同じタイミング）
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -63,7 +64,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -76,7 +77,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -89,7 +90,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
-            flavor = "balanced";
+            flavor = "tap-preferred";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <200>;
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
@@ -303,7 +304,7 @@
         // ─────────────────────────────────────────────────────────────────────
         // Layer 6: MOUSE（マウス操作）
         // 起動: RH2 のダブルタップ（&to MOUSE）
-        // 復帰: 左サム &to WIN（LH1）/ &to MAC（LH2）
+        // 復帰: 左サム &to MAC（LH1）/ &to WIN（LH2）
         // 移動: 右手 H/J/K/L ＝ 左/下/上/右、左手 E/S/D/F ＝ 上/左/下/右（同速）
         // クリック: 右サム RH1=左/ RH2=右、右上 U=左/ O=右、中央 MB3=中
         // スクロール: 右下 N/M/,/. ＝ 左/下/上/右
@@ -318,7 +319,7 @@
 //  ├─────────┼──────────────────┼──────────────┼──────────────┼───────────────────┼──────────┼──────────╮  ╭──────────┼──────────┼───────────────────┼─────────────────┼──────────────┼───────────────────┼──────────┤
     &trans     &none              &none          &none          &none               &none      &trans       &mkp MCLK  &msc SCRL_LEFT &msc SCRL_DOWN  &msc SCRL_UP      &msc SCRL_RIGHT &none             &none
 //  ├─────────┼──────────────────┼──────────────┼──────────────┼───────────────────┼──────────╯              ╰──────────┼───────────────────┼─────────────────┼──────────────┼───────────────────┼──────────┤
-    &none      &none              &none          &to MAC        &to WIN             &none                                     &kp ESC    &mkp LCLK           &mkp RCLK         &none          &none               &none
+    &none      &none              &none          &to WIN        &to MAC             &none                                     &kp ESC    &mkp LCLK           &mkp RCLK         &none          &none               &none
 //  ╰─────────┴──────────────────┴──────────────┴──────────────┴───────────────────┴──────────────────────────────────────────────────────┴─────────────────┴──────────────┴───────────────────┴──────────╯
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
