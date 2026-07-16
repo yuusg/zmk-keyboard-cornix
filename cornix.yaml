@@ -32,7 +32,7 @@ layers:
   - V
   - B
   - MUTE
-  - 'M-Click'
+  - '&mkp MB3'
   - N
   - M
   - ','
@@ -42,12 +42,12 @@ layers:
   - LCTRL
   - LGUI
   - LALT
-  - {t: LANG2, h: Sft, s: x2 ScWin}
+  - '&td_eisu_scw'
   - {t: SPACE, h: Nav}
   - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LGUI}
-  - {t: LANG1, h: Sft, s: x2 Mouse}
+  - '&td_lang1_mouse'
   - LALT
   - DOWN
   - Sys
@@ -83,7 +83,7 @@ layers:
   - V
   - B
   - MUTE
-  - 'M-Click'
+  - '&mkp MB3'
   - N
   - M
   - ','
@@ -93,12 +93,12 @@ layers:
   - ''
   - LALT
   - LSHFT
-  - {t: LANG2, h: Gui, s: x2 ScMac}
+  - '&td_eisu_scm'
   - {t: SPACE, h: Fn}
   - {t: '-', h: Sym}
   - ENTER
   - {t: TAB, h: LALT}
-  - {t: LANG1, h: Sft, s: x2 Mouse}
+  - '&td_lang1_mouse'
   - LALT
   - ''
   - Sys
@@ -120,7 +120,7 @@ layers:
   - LALT
   - DEL
   - BSPC
-  - '-'
+  - '&mkp RCLK'
   - LEFT
   - DOWN
   - UP
@@ -128,13 +128,13 @@ layers:
   - '-'
   - '='
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - '&mkp LCLK'
   - {t: ▽, type: trans}
-  - 'M-Click'
+  - '&mkp MB3'
   - HOME
   - PG DN
   - PG UP
@@ -171,7 +171,7 @@ layers:
   - LGUI
   - DEL
   - BSPC
-  - F5
+  - '&mkp RCLK'
   - LEFT
   - DOWN
   - UP
@@ -179,13 +179,13 @@ layers:
   - '-'
   - '='
   - {t: ▽, type: trans}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - '&mkp LCLK'
   - {t: ▽, type: trans}
-  - 'M-Click'
+  - '&mkp MB3'
   - HOME
   - PG DN
   - PG UP
@@ -236,7 +236,7 @@ layers:
   - F4
   - Sft+F5
   - {t: ▽, type: trans}
-  - 'M-Click'
+  - '&mkp MB3'
   - F6
   - F7
   - F8
@@ -310,39 +310,39 @@ layers:
   - {t: ▽, type: trans}
   - ''
   - ''
-  - 'Mv ↑'
+  - '&mmv MOVE_UP'
   - ''
   - ''
   - ''
-  - 'L-Click'
+  - '&mkp LCLK'
   - ''
-  - 'R-Click'
-  - ''
-  - ''
-  - {t: ▽, type: trans}
-  - ''
-  - 'Mv ←'
-  - 'Mv ↓'
-  - 'Mv →'
-  - ''
-  - 'Mv ←'
-  - 'Mv ↓'
-  - 'Mv ↑'
-  - 'Mv →'
+  - '&mkp RCLK'
   - ''
   - ''
   - {t: ▽, type: trans}
   - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_UP'
+  - '&mmv MOVE_RIGHT'
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - ''
   - ''
   - ''
   - ''
   - ''
   - {t: ▽, type: trans}
-  - 'M-Click'
-  - 'Scr ←'
-  - 'Scr ↓'
-  - 'Scr ↑'
-  - 'Scr →'
+  - '&mkp MCLK'
+  - '&msc SCRL_LEFT'
+  - '&msc SCRL_DOWN'
+  - '&msc SCRL_UP'
+  - '&msc SCRL_RIGHT'
   - ''
   - ''
   - ''
@@ -352,8 +352,8 @@ layers:
   - {t: Mac, h: toggle}
   - ''
   - ESC
-  - 'L-Click'
-  - 'R-Click'
+  - '&mkp LCLK'
+  - '&mkp RCLK'
   - ''
   - ''
   - ''
