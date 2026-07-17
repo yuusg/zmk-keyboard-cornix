@@ -120,7 +120,7 @@ layers:
   - LALT
   - DEL
   - BSPC
-  - '&mkp RCLK'
+  - '&mkp LCLK'
   - LEFT
   - DOWN
   - UP
@@ -132,7 +132,7 @@ layers:
   - Ctl+X
   - Ctl+C
   - Ctl+V
-  - '&mkp LCLK'
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - '&mkp MB3'
   - HOME
@@ -171,7 +171,7 @@ layers:
   - LGUI
   - DEL
   - BSPC
-  - '&mkp RCLK'
+  - '&mkp LCLK'
   - LEFT
   - DOWN
   - UP
@@ -183,7 +183,7 @@ layers:
   - Gui+X
   - Gui+C
   - Gui+V
-  - '&mkp LCLK'
+  - '&mkp RCLK'
   - {t: ▽, type: trans}
   - '&mkp MB3'
   - HOME

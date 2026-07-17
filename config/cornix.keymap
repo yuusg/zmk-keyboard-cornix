@@ -244,15 +244,15 @@
         // ─────────────────────────────────────────────────────────────────────
         // Layer 2: NAV（ナビゲーション・Win 用）
         // LH1 ホールドで起動
-        // 左手: B=左クリック / G=右クリック（右手は Nape Pro のボールに置いたまま）
+        // 左手: G=左クリック / B=右クリック（右手は Nape Pro のボールに置いたまま）
         //       Z/X/C/V = Ctrl+Z/X/C/V（元に戻す・切り取り・コピー・ペースト）
         // ─────────────────────────────────────────────────────────────────────
         nav_layer {
             display-name = "Nav";
             bindings = <
     &trans     &none              &none          &kp ESC        &kp LALT            &kp TAB                                   &none      &none               &kp INS           &kp SLCK       &kp LS(MINUS)       &kp LS(EQUAL)
-    &trans     &none              &kp LALT       &kp DEL        &kp BSPC            &mkp RCLK                                 &kp LEFT   &kp DOWN            &kp UP            &kp RIGHT      &kp MINUS           &kp EQUAL
-    &trans     &kp LC(Z)          &kp LC(X)      &kp LC(C)      &kp LC(V)           &mkp LCLK  &trans       &mkp MB3   &kp HOME   &kp PG_DN           &kp PG_UP         &kp END        &none               &none
+    &trans     &none              &kp LALT       &kp DEL        &kp BSPC            &mkp LCLK                                 &kp LEFT   &kp DOWN            &kp UP            &kp RIGHT      &kp MINUS           &kp EQUAL
+    &trans     &kp LC(Z)          &kp LC(X)      &kp LC(C)      &kp LC(V)           &mkp RCLK  &trans       &mkp MB3   &kp HOME   &kp PG_DN           &kp PG_UP         &kp END        &none               &none
     &none      &trans             &trans         &trans         &none               &trans                                    &trans     &trans              &trans            &none          &none               &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
@@ -261,15 +261,15 @@
         // ─────────────────────────────────────────────────────────────────────
         // Layer 3: FN（ファンクション・Mac 用）
         // LH1 ホールドで起動（Mac モード時）
-        // 左手: B=左クリック / G=右クリック（右手は Nape Pro のボールに置いたまま）
+        // 左手: G=左クリック / B=右クリック（右手は Nape Pro のボールに置いたまま）
         //       Z/X/C/V = Cmd+Z/X/C/V（元に戻す・切り取り・コピー・ペースト）
         // ─────────────────────────────────────────────────────────────────────
         fn_layer {
             display-name = "Fn";
             bindings = <
     &trans     &none              &none          &kp ESC        &kp LGUI            &kp TAB                                   &none      &none               &kp INS           &kp SLCK       &kp LS(MINUS)       &kp LS(EQUAL)
-    &trans     &kp F1             &kp LGUI       &kp DEL        &kp BSPC            &mkp RCLK                                 &kp LEFT   &kp DOWN            &kp UP            &kp RIGHT      &kp MINUS           &kp EQUAL
-    &trans     &kp LG(Z)          &kp LG(X)      &kp LG(C)      &kp LG(V)           &mkp LCLK  &trans       &mkp MB3   &kp HOME   &kp PG_DN           &kp PG_UP         &kp END        &none               &none
+    &trans     &kp F1             &kp LGUI       &kp DEL        &kp BSPC            &mkp LCLK                                 &kp LEFT   &kp DOWN            &kp UP            &kp RIGHT      &kp MINUS           &kp EQUAL
+    &trans     &kp LG(Z)          &kp LG(X)      &kp LG(C)      &kp LG(V)           &mkp RCLK  &trans       &mkp MB3   &kp HOME   &kp PG_DN           &kp PG_UP         &kp END        &none               &none
     &none      &none              &trans         &none          &none               &none                                     &trans     &trans              &trans            &none          &none               &none
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp PG_UP PG_DN>;
